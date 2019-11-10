@@ -1,0 +1,1 @@
+# executable('variadic', 'variadic.cpp')

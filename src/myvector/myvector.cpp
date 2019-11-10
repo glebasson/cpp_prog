@@ -107,4 +107,6 @@ int main() {
 
     while(v.size())
       v.pop_back() << v.size(); 
+
+  return(0);
 }

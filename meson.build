@@ -1,2 +1,3 @@
 project('cpp_prog', 'cpp')
-subdir('myvector')
+subdir('src')
+subdir('test')
