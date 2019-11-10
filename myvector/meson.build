@@ -1,0 +1,1 @@
+executable('myvector', 'myvector.cpp')
