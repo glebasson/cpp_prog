@@ -102,19 +102,6 @@ int myvector<T>::size() {
 
 
 int main() {
-  // myvector<int> v;
-  // v.push_back(10);
-  // v.push_back(20);
-  // myvector<int> d = v;
-  // d.push_back(50);
-  // d.push_back(70);
-  // d.push_back(80);
-
-  // d.swap(v);
-
-  // myvector<int> d(v);
-  // myvector<int> c = std::move(d);
-  // std::cout << d.data[2] << std::endl;
   myvector<std::ofstream> v;
   v.push_back(std::ofstream("a"));
   v.push_back(std::ofstream("b"));
