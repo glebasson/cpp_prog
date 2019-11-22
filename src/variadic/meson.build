@@ -1,1 +1,1 @@
-# executable('variadic', 'variadic.cpp')
+#executable('variadic', 'variadic.cpp')

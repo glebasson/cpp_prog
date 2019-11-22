@@ -64,10 +64,43 @@ cat(Args... tail){
 	return(out);
 }
 
+
+template<class T,int N,int M> struct Tie {
+	std::array<std::reference_wrapper<std::array<T, N>>, M> ref;
+
+	template<typename head, typename... Args>
+	Tie(head first, Args... tail) : ref({std::ref(first), std::ref(tail)...}) {}
+
+	void operator=(const std::array<T,N*M>& rhs) {
+		for (int i = 0; i < M; ++i) {
+			std::array<T, N>& q = ref[i];
+			for (int j = 0; j < N; ++j) {
+				q[j] = rhs[i*N + j];
+			}
+		}
+	}
+};
+
+
+template<typename head, typename... Args>
+Tie<typename head::value_type, std::tuple_size<head>::value, (sizeof...(Args) + 1)> 
+tie(head first, Args... tail){
+	typedef Tie<typename head::value_type, std::tuple_size<head>::value, (sizeof...(Args) + 1)> TT;
+	TT t(first, tail...);
+	return(t);
+	// return(rec_tie<TT, 0, head, Args...>(t, first, tail...));
+}
+
 // int main() {
 // 	std::array<int, 3> a = { 1, 2, 3};
 // 	std::array<int, 3> b = { 1, 2, 3};
 // 	std::array<int, 3> c = { 5, 6, 8};
-// 	std::array<int, 9> d = cat(a, b, c);
-// 	for(int i = 0; i<9; i++)std::cout << d[i] << std::endl;
+// 	std::array<int, 3> q = { 1, 2, 3};
+// 	std::array<int, 3> w = { 1, 2, 3};
+// 	std::array<int, 3> e = { 5, 6, 8};
+
+
+// 	tie(q, w, e) = cat(a,b,c); 
+// 	std::cout << q[1] << std::endl;
+
 // }
