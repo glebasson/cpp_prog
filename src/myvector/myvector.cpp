@@ -58,12 +58,6 @@ myvector<T>& myvector<T>::operator=(const myvector &x) {
   return(myvector(x));
 }
 
-template <typename T>
-void myvector<T>::swap(T &a, T &b) {
-  T tmp(std::move(a));
-  a = std::move(b);
-  b = std::move(tmp);
-}
 
 // move push
 template <typename T>
@@ -98,6 +92,10 @@ int myvector<T>::size() {
   return(len);
 }
 
+template<typename T>
+void swap(myvector<T>& a, myvector<T>& b) {
+  a.swap(b);
+}
 
 
 

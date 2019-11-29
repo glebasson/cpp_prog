@@ -24,7 +24,7 @@ public:
 	myvector& operator=(const myvector& x);
 
 	// move swap
-	void swap(T &a, T &b);
+
 
 	T* begin();
 	T* end();
@@ -39,17 +39,8 @@ public:
 	int size();
 
 	void swap(myvector &x) {
-		T* tmp = new T[len];
-		for(int i=0; i<len; i++) data[i] = tmp[i];
-		delete[] data;
-		data = new T[x.len];
-		for(int i=0; i<x.len; i++) data[i] = x.data[i];
-		delete[] x.data;
-		x.data = new T[len];
-		for(int i=0; i<len; i++) x.data[i] = tmp[i];
-		int tmpl = len;
-		len = x.len;
-		x.len = tmpl;
+		std::swap(data, x.data);
+		std::swap(len, x.len);
 	}
 
 	void erase(int pos) {
@@ -61,4 +52,5 @@ public:
 	int len = 0;
 };
 
+void swap(T &a, T &b);
 #endif

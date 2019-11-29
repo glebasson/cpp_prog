@@ -1,0 +1,1 @@
+#executable('matrix', 'matrix.cpp')
