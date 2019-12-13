@@ -48,7 +48,7 @@ class record {
 		record(std::string n, int i) : id(i), name(n) {}
 
 		bool operator<(const record &x) const {
-			return bool(id < x.id);
+			return id < x.id;
 		}
 
     bool operator==(const record &x) const {
@@ -86,7 +86,7 @@ template <class InputIterator>
   void inplace_merge (InputIterator first, InputIterator last, InputIterator middle) {
     if (first == middle || middle == last) 
       return;
-    typedef typename __gnu_cxx::iterator_traits<InputIterator>::value_type
+    typedef typename std::iterator_traits<InputIterator>::value_type
     _ValueType;
     std::vector<_ValueType> ar(std::distance(first,last));
     merge(first, middle, middle, last, ar.begin());
