@@ -3,6 +3,14 @@
 
 #include <bits/stdc++.h>
 
+/**
+ * \brief
+ * Реализация вектора
+ * \date 2019-12-19
+ *
+ * Развернутое описание
+ *
+ */
 template <typename T>
 class myvector {
 public:

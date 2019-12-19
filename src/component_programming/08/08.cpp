@@ -43,6 +43,7 @@ template <class InputIterator>
     }
 }
 
+
 template <class InputIterator>
 void fastmergesort(InputIterator first, InputIterator last) {
     int n = std::thread::hardware_concurrency();
