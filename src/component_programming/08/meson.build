@@ -1,1 +1,1 @@
-executable('08', '08.cpp', include_directories: '../', link_args : '-lpthread')
+executable('08', '08.cpp', link_args : '-lpthread')

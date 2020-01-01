@@ -1,4 +1,4 @@
-gtest = dependency('gtest', main:true)
+gtest = dependency('gtest')
 subdir('variadic')
 subdir('matrixtest')
 subdir('07test')
