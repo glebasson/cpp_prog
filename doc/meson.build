@@ -5,6 +5,6 @@ configure_file(input:'Doxyfile.in', output:'Doxyfile', configuration: doxyfile)
 
 doxygen = find_program('doxygen')
 if doxygen.found()
-    run_target('doc', 'doxygen ' + meson.build_root() + '/doc/Doxyfile')
+    run_target('doc', command: 'doxygen ' + meson.build_root() + '/doc/Doxyfile')
     # [doxygen, meson.build_root() + '/doc/Doxyfile']
 endif
